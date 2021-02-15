@@ -91,10 +91,12 @@ h1 {
 
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
   border: 1px solid black;
+  margin-right: 5px;
 }
 .navbar-header button.navbar-toggle {
   clear: both;
   margin-top: -30px;
+  
 }
 
 
@@ -143,9 +145,7 @@ h1 {
   .col-lg-12 {
     width: 100%;
   }
-  #nav-list a {
-    visibility: hidden;
-  }
+  
 }
 
 /* Medium devices */
@@ -189,9 +189,7 @@ h1 {
   .col-md-12 {
     width: 100%;
   }
-  #nav-list a {
-    visibility: hidden;
-  }
+ 
 }
 
 
@@ -236,16 +234,17 @@ h1 {
     width: 100%;
   }
 
-  
-  #collapsable-nav a { /* Collapsed nav menu glyph */
+}
+#collapsable-nav a { /* Collapsed nav menu glyph */
     font-size: 1em;
-    margin-right: 0px;
+    margin-right: 5px;
+	background-color: gray;
   }
 
   #nav-list {
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: white;
+  background-color: gray;
   }
   #nav-list a {
     color: black;
@@ -267,5 +266,3 @@ h1 {
     background-color: #f6b319;
     color: #951c49;
   }
-
-}
