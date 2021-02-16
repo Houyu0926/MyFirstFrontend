@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   homeHtmlUrl,
-  //allCategoriesUrl,
+  // allCategoriesUrl,
   function (responseText) {
     document.querySelector("#main-content")
       .innerHTML = responseText;
@@ -127,6 +127,9 @@ function buildHomeViewHtml(categories,
   return finalHtml;
 
 }
+
+var categories = ['L', 'A', 'B', 'SP', 'C', 'F', 'V', 'DK', 'VG', 'CU', 'NL', 'NF', 'PF', 'FR', 'CM', 'FY', 'SO', 'DS', 'D', 'SR'];
+var chosenCategoryShortName = chooseRandomCategory (categories);
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
@@ -160,10 +163,16 @@ dc.loadMenuItems = function (categoryShort) {
 
 
 dc.loadSpecialItems = function () {
-  showLoading("#main-content");
+  // showLoading("#main-content");
+  // $ajaxUtils.sendGetRequest(
+  //   allCategoriesUrl,
+  //   buildAndShowHomeHTML);
+   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
-    allCategoriesUrl,
-    buildAndShowHomeHTML);
+    menuItemsUrl + chosenCategoryShortName,
+    //menuItemsUrl + chosenCategoryShortName,
+    buildAndShowMenuItemsHTML);
+    //buildAndShowHomeHTML);
 };
 
 // Builds HTML for the categories page based on the data
